@@ -21,7 +21,11 @@ const reducer = (state = initialState, action) => {
       };
 
     case actionTypes.POST_BOOK:
-    //UPDATE THE STATE ACCORDINGLY
+      state.author.books = state.author.books.concat(action.payload);
+      return {
+        ...state,
+        author: { ...state.author }
+      };
 
     default:
       return state;
